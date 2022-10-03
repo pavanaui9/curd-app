@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Name</td>
+      <td>IP</td>
+      <td>Domain</td>
+      <td>Username</td>
+      <td>Password</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+
+   
+      <tr *ngFor="let source of Sources">
+          <td>{{ source.name }}</td>
+          <td>{{ source.ipaddress }}</td>
+          <td>{{ source.domain }}</td>
+          <td>{{ source.username }}</td>
+          <td><a [routerLink]="['edit', source._id]" class="btn btn-primary">Edit</a></td>
+          <td><a (click)="deleteSource(source._id)" class="btn btn-danger">Delete</a></td>
+      </tr>
+  </tbody>
+ 
+</table>
